@@ -3,10 +3,10 @@ import numpy as np
 import cv2
 
 # Cargar modelo y etiquetas una sola vez
-model = load_model("keras_Model.h5", compile=False)
-class_names = open("labels.txt", "r").readlines()
+model = load_model("data/keras_Model.h5", compile=False)
+class_names = open("data/labels.txt", "r").readlines()
 
-def predict_image(image: np.ndarray) -> tuple[str, float]:
+def predict_image(image: np.ndarray) -> tuple[str, str]:
     image = cv2.resize(image, (224, 224), interpolation=cv2.INTER_AREA)
     image = np.asarray(image, dtype=np.float32).reshape(1, 224, 224, 3)
     image = (image / 127.5) - 1
@@ -14,6 +14,7 @@ def predict_image(image: np.ndarray) -> tuple[str, float]:
     prediction = model.predict(image)
     index = np.argmax(prediction)
     class_name = class_names[index].strip()
-    confidence_score = float(prediction[0][index])
+    confidence_score = prediction[0][index]
+    confidence_p = f"{round(confidence_score * 100)}%"
 
-    return class_name, confidence_score
+    return class_name, confidence_p

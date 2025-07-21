@@ -1,0 +1,2 @@
+0 celular
+1 posillo
