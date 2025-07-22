@@ -3,7 +3,7 @@ import numpy as np
 import cv2
 
 # Cargar modelo y etiquetas una sola vez
-model = load_model("data/keras_Model.h5", compile=False)
+model = load_model("data/keras_model.h5", compile=False)
 class_names = open("data/labels.txt", "r").readlines()
 
 def predict_image(image: np.ndarray) -> tuple[str, str]:
@@ -15,6 +15,7 @@ def predict_image(image: np.ndarray) -> tuple[str, str]:
     index = np.argmax(prediction)
     class_name = class_names[index].strip()
     confidence_score = prediction[0][index]
+    print(f'Porcentaje: {confidence_score}')
     confidence_p = f"{round(confidence_score * 100)}%"
 
     return class_name, confidence_p
