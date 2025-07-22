@@ -32,9 +32,4 @@ async def predict(file: UploadFile = File(...)):
     nparr = np.frombuffer(contents, np.uint8)
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
-    class_name, confidence = predict_image(img)
-
-    return {
-        "class": class_name,
-        "confidence": confidence
-    }
+    return predict_image(img)
