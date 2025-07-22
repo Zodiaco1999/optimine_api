@@ -1,2 +1,3 @@
 0 vaso
 1 estuche
+2 desconocido
