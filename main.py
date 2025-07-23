@@ -11,7 +11,11 @@ origins = [
     "https://localhost:4200",
     "http://localhost",
     "http://localhost:4200",
-    "http://127.0.0.1:4200"
+    "http://127.0.0.1:4200",
+    "https://zodiaco1999.github.io",
+    "https://zodiaco1999",
+    "http://zodiaco1999.github.io",
+    "http://zodiaco1999"
 ]
 
 app.add_middleware(
