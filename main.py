@@ -1,6 +1,7 @@
-from fastapi import FastAPI, UploadFile, File
+from fastapi import FastAPI, UploadFile, File, Query
 import numpy as np
 import cv2
+from services.ia_chat import answer_question
 from services.image_recognition import predict_image
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -37,3 +38,7 @@ async def predict(file: UploadFile = File(...)):
     img = cv2.imdecode(nparr, cv2.IMREAD_COLOR)
 
     return predict_image(img)
+
+@app.get("/ask")
+def ask(text: str = Query(..., description="Pregunta relacionada con retroexcavadoras o palas hidráulicas")):
+    return answer_question(text)

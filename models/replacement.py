@@ -12,7 +12,7 @@ known_replacements: List[Replacement] = [
     Replacement(
         part_number="4400454",
         label="0 Inyector de grasa",
-        quantity=11,
+        quantity=14,
         name="Inyector de grasa"
     ),
     Replacement(
@@ -24,19 +24,19 @@ known_replacements: List[Replacement] = [
     Replacement(
         part_number="4192035",
         label="2 SENSOR DE NIVEL DE GRASA",
-        quantity=11,
+        quantity=23,
         name="Sensor de nivel de grasa"
     ),
     Replacement(
         part_number="4400418",
         label="3 FILTRO DE AIRE ACONDICIONADO",
-        quantity=12,
-        name="Filtro de aire condicionado"
+        quantity=9,
+        name="Filtro de aire acondicionado"
     ),
     Replacement(
         part_number="4385019",
         label="4 MANGUERA",
-        quantity=11,
+        quantity=21,
         name="Manguera de alta bomba auxiliar"
     )
 ]
